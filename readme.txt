@@ -2,7 +2,7 @@ BASEGIT 操作指令：
 初始化仓库 
 	git init
 提交文件 
-	git add 文件 & git commit -m 提交内容
+	git add {fileName} & git commit -m {提交内容}
 查看日志
 	git log
 回退
@@ -14,16 +14,16 @@ BASEGIT 操作指令：
 查看分支状态
 	git status
 仓库最新版本与工作区的区别
-	git diff HEAD -- 文件
+	git diff HEAD -- {fileName}
 丢弃工作区修改（用版本库里的版本替换工作区的版本）
-	git checkout -- 文件
+	git checkout -- {fileName}
 暂存区修改撤销
 	git reset HEAD file
 删除
-	git rm 文件&git commit -m 内容
+	git rm {fileName}&git commit -m 内容
 远程仓库
 	git remote add origin {github ssh/https}
-	eg: remote add origin git@github.com:lance2038/lanceEdit.git
+	eg:git remote add origin git@github.com:lance2038/lanceEdit.git
 首次推送
 	git push -u origin master
 之后推送
@@ -32,3 +32,16 @@ BASEGIT 操作指令：
 	git clone {github ssh/https}
 拉取远程库内容
 	git pull
+创建新的分支
+	git branch {branchName}
+切换到新分支
+	git checkout {branchName}
+二合一,创建新的分支并切换到新分支
+	git checkout -b {branchName}
+查看当前分支
+	git branch
+在master使用用于合并指定分支到master
+	git merge {branchName}
+删除分支
+	git branch -d {branchName}
+
