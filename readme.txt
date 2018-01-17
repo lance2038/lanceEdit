@@ -1,4 +1,4 @@
-BASEGIT 操作指令：
+BASEGIT 操作指令：https://git-scm.com/
 初始化仓库 
 	git init
 提交文件 
@@ -44,4 +44,38 @@ BASEGIT 操作指令：
 	git merge {branchName}
 删除分支
 	git branch -d {branchName}
-
+强制删除分支
+	git branch -D {branchName}
+查看分支合并图
+	git log --graph
+禁用快速合并到合并
+	git merge --no-ff -m {"合并信息"} {branchName}
+暂时隐藏工作区
+	git stash
+查看隐藏工作区列表
+	git stash list
+恢复隐藏工作区
+	1.git stash apply {工作区} + 删除stash内容 git stash drop
+	2.git stash pop
+查看远程仓库名称
+	git remote
+在本地创建和远程分支对应的分支，本地和远程分支的名称最好一致
+	git checkout -b {branchName} origin/{branchName}
+建立本地分支和远程分支的关联
+	git branch --set-upstream {branchName} origin/{branchName}
+在最新提交上打标签
+	git tag {tagName} 或 git tag -a {tagName} -m {说明文字}
+使用git log找到commitID打标签
+	git tag {tagName} {commitID}
+查看标签
+	git tag
+查看标签信息
+	git show {tagName}
+删除一个本地标签
+	git tag -d {tagName}
+删除一个远程标签
+	git push origin :refs/tags/{tagName}
+推送一个本地标签
+	git push origin {tagName}
+推送全部未推送过的本地标签
+	git push origin --tags
